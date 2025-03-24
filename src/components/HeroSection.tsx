@@ -28,7 +28,7 @@ const HeroSection = () => {
             transition={{ duration: 0.5 }}
           >
             Transform Your{' '}
-            <span className="text-[#a3e635]">
+            <span className="text-blue-400">
               <TextRotate
                 texts={[
                   "Bathroom",
@@ -65,7 +65,7 @@ const HeroSection = () => {
         >
           <a 
             href="#quote" 
-            className="bg-[#a3e635] hover:bg-[#8bc93a] text-gray-900 font-bold py-3 px-8 rounded-full transition-all duration-300"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300"
           >
             Get a Free Quote
           </a>
@@ -85,7 +85,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            <p className="text-5xl font-bold text-[#a3e635] mb-2">10+</p>
+            <p className="text-5xl font-bold text-blue-400 mb-2">10+</p>
             <p className="text-lg">Years Experience</p>
           </motion.div>
           
@@ -95,7 +95,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <p className="text-5xl font-bold text-[#a3e635] mb-2">300+</p>
+            <p className="text-5xl font-bold text-blue-400 mb-2">300+</p>
             <p className="text-lg">Projects Completed</p>
           </motion.div>
           
@@ -105,7 +105,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.7 }}
           >
-            <p className="text-5xl font-bold text-[#a3e635] mb-2">Auckland</p>
+            <p className="text-5xl font-bold text-blue-400 mb-2">Auckland</p>
             <p className="text-lg">Service Area</p>
           </motion.div>
           
@@ -115,7 +115,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            <p className="text-5xl font-bold text-[#a3e635] mb-2">100%</p>
+            <p className="text-5xl font-bold text-blue-400 mb-2">100%</p>
             <p className="text-lg">Satisfaction</p>
           </motion.div>
         </div>
