@@ -49,7 +49,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <a 
             href="#hero" 
-            className="text-xl md:text-2xl font-bold text-brand-blue hover:text-brand-blue-light transition-colors duration-300"
+            className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${
+              isScrolled ? 'text-brand-blue' : 'text-brand-blue hover:text-brand-blue-light'
+            }`}
           >
             Auckland Tiling
           </a>
@@ -60,7 +62,7 @@ const Navbar = () => {
                 <a 
                   key={link.title} 
                   href={link.href}
-                  className={`nav-link ${activeSection === link.href.substring(1) ? 'active' : ''}`}
+                  className={`nav-link ${isScrolled ? 'text-black' : 'text-white'} ${activeSection === link.href.substring(1) ? 'active' : ''}`}
                 >
                   {link.title}
                 </a>
