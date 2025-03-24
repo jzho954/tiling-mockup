@@ -16,6 +16,15 @@ const ServiceDetail = () => {
     return <div className="py-20 text-center">Service not found</div>;
   }
 
+  // Map service ID to image path - these could be stored in the service objects instead
+  const serviceImages = {
+    'indoor-tiling': '/lovable-uploads/43ddcf7c-d006-4a57-ba92-2a089682b03a.png',
+    'outdoor-tiling': '/lovable-uploads/ec3a22fa-5536-45c1-b37c-2b19541595f3.png',
+    'waterproofing': '/lovable-uploads/3e220ebf-07be-4913-8047-07446025fa55.png'
+  };
+
+  const imagePath = serviceImages[service.id as keyof typeof serviceImages] || '/placeholder.svg';
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -37,6 +46,15 @@ const ServiceDetail = () => {
             <div className="flex items-center mb-4">
               <div className="text-5xl mr-4">{service.icon}</div>
               <h1 className="text-3xl md:text-4xl font-bold text-brand-blue">{service.title}</h1>
+            </div>
+
+            {/* Service image section */}
+            <div className="mb-8 rounded-lg overflow-hidden shadow-md">
+              <img 
+                src={imagePath} 
+                alt={`${service.title} service by Auckland Tiling`}
+                className="w-full h-64 md:h-96 object-cover hover:scale-105 transition-transform duration-500"
+              />
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
