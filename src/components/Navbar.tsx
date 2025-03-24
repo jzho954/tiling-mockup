@@ -70,7 +70,7 @@ const Navbar = () => {
                   <Link
                     key={link.title}
                     to={link.href}
-                    className={`nav-link ${isScrolled ? 'text-black' : 'text-white'} ${isActive ? 'active' : ''}`}
+                    className={`nav-link ${isScrolled ? 'text-gray-800' : 'text-white'} ${isActive ? 'active' : ''}`}
                   >
                     {link.title}
                   </Link>
