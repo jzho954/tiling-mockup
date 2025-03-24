@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { services } from '@/components/ServicesSection';
 import Navbar from '@/components/Navbar';
@@ -10,11 +10,6 @@ import { motion } from 'framer-motion';
 const ServiceDetail = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
   const service = services.find(s => s.id === serviceId);
-
-  // Force scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   if (!service) {
     return <div className="py-20 text-center">Service not found</div>;

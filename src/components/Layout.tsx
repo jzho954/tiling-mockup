@@ -1,15 +1,12 @@
+
 import React, { ReactNode } from 'react';
 import Navbar from './Navbar';
-import { useScrollTop } from '../hooks/useScrollTop';
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  // Use the custom scroll hook to manage scroll position
-  useScrollTop();
-  
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -20,4 +17,4 @@ const Layout = ({ children }: LayoutProps) => {
   );
 };
 
-export default Layout; 
+export default Layout;
