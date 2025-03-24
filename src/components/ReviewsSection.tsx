@@ -21,7 +21,7 @@ const reviews = [
     "rating": 5
   },
   {
-    "content": "Auckland Tiling transformed our kitchen with a beautiful backsplash and floor tiles. The work was top-notch, with no corners cut, and the end result is absolutely perfect. They were professional and easy to work with. Couldn’t be happier!",
+    "content": "Auckland Tiling transformed our kitchen with a beautiful backsplash and floor tiles. The work was top-notch, with no corners cut, and the end result is absolutely perfect. They were professional and easy to work with. Couldn't be happier!",
     "author": "James",
     "location": "West Auckland",
     "rating": 5
@@ -60,7 +60,7 @@ const ReviewsSection = () => {
     <section id="reviews" className="py-20 bg-gray-50">
       <div className="section-container">
         <div className="text-center mb-16">
-          <p className="uppercase text-green-500 font-semibold tracking-wider mb-2">TESTIMONIALS</p>
+          <p className="uppercase text-brand-blue font-semibold tracking-wider mb-2">TESTIMONIALS</p>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our satisfied clients have to say.
@@ -81,7 +81,7 @@ const ReviewsSection = () => {
         </div>
 
         <div className="flex justify-center mt-12">
-          <Button variant="outline" className="flex items-center gap-2 px-6 py-3 rounded-full bg-green-500 text-white hover:bg-green-600 border-none">
+          <Button variant="outline" className="flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white hover:bg-brand-blue-light border-none">
             View All Reviews
             <ArrowRight className="w-4 h-4" />
           </Button>
