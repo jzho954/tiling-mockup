@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-primary-foreground/70">
-          <p>© {currentYear} Auckland Tiling. All rights reserved.</p>
+          <p>© {currentYear} Contact JXMStudio to finish website!</p>
         </div>
       </div>
     </footer>

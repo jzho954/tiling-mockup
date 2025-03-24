@@ -88,6 +88,23 @@
   }
 }
 
+/* Ensure proper scroll reset behavior */
+html, body {
+  scroll-behavior: auto;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure the page starts at the top by default */
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(20px);

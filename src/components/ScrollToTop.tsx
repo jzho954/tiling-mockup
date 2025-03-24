@@ -1,29 +1,32 @@
-
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
+  const isInitialMount = useRef(true);
   
   useEffect(() => {
-    // Immediately scroll to top
+    // Skip scroll reset on first render (initial page load)
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    
+    // Force immediate scroll reset
     window.scrollTo(0, 0);
     
-    // Set scroll position again after a slight delay to ensure all content has rendered
-    const timeoutId = setTimeout(() => {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'auto'
-      });
-      
-      // For Safari and some mobile browsers
-      document.body.scrollTop = 0;
-      // For Chrome, Firefox, IE and Opera
-      document.documentElement.scrollTop = 0;
-    }, 100);
+    // Make sure to set both scroll positions to cover all browsers
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     
-    return () => clearTimeout(timeoutId);
+    // Use requestAnimationFrame for more reliable scroll reset after DOM updates
+    const frameId = requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+    
+    return () => cancelAnimationFrame(frameId);
   }, [pathname]);
   
   return null;

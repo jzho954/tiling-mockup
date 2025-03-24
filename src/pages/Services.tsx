@@ -34,9 +34,9 @@ const Services = () => {
               {services.map((service, index) => {
                 // Map service ID to image path
                 const serviceImages = {
-                  'indoor-tiling': '/lovable-uploads/43ddcf7c-d006-4a57-ba92-2a089682b03a.png',
+                  'indoor-tiling': '/lovable-uploads/tiling4.jpg',
                   'outdoor-tiling': '/lovable-uploads/ec3a22fa-5536-45c1-b37c-2b19541595f3.png',
-                  'waterproofing': '/lovable-uploads/3e220ebf-07be-4913-8047-07446025fa55.png'
+                  'waterproofing': '/lovable-uploads/tiling3.jpg'
                 };
                 
                 const imagePath = serviceImages[service.id as keyof typeof serviceImages] || '/placeholder.svg';
