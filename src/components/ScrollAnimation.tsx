@@ -1,5 +1,5 @@
-
 import React, { useEffect, useRef, ReactNode } from 'react';
+import { useLocation } from 'react-router-dom';
 
 interface ScrollAnimationProps {
   children: ReactNode;
@@ -15,6 +15,14 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
   delay = 0 
 }) => {
   const elementRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Reset animation state on navigation
+    if (elementRef.current) {
+      elementRef.current.classList.remove('animated');
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

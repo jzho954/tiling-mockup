@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -47,7 +46,7 @@ const Navbar = () => {
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-nav py-2' : 'bg-transparent py-4'
+        isScrolled || location.pathname !== '/' ? 'glass-nav py-2' : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,7 +54,7 @@ const Navbar = () => {
           <Link
             to="/" 
             className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-primary' : 'text-white hover:text-primary'
+              isScrolled || location.pathname !== '/' ? 'text-primary' : 'text-white hover:text-primary'
             }`}
           >
             Auckland Tiling
@@ -65,12 +64,13 @@ const Navbar = () => {
             <div className="hidden md:flex space-x-1 md:space-x-4">
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.href;
+                const isNonHomePage = location.pathname !== '/';
                 
                 return (
                   <Link
                     key={link.title}
                     to={link.href}
-                    className={`nav-link ${isScrolled ? 'text-gray-800' : 'text-white'} ${isActive ? 'active' : ''}`}
+                    className={`nav-link ${isNonHomePage || isScrolled ? 'text-gray-800' : 'text-white'} ${isActive ? 'active' : ''}`}
                   >
                     {link.title}
                   </Link>

@@ -26,7 +26,7 @@ const AboutSection = () => {
           <ScrollAnimation animation="fade-in-right">
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1581574919402-5ab7eec25827?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                src="/lovable-uploads/tiling2.jpg" 
                 alt="Auckland Tiler at work" 
                 className="w-full h-full object-cover"
               />

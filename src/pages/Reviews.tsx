@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -88,11 +87,16 @@ const ReviewCard = ({ review, index }: { review: any, index: number }) => {
 };
 
 const Reviews = () => {
+  // Force scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navbar />
       
-      <main className="pt-28 pb-20">
+      <main className="pt-16 pb-20">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
