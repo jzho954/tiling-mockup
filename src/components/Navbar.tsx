@@ -50,7 +50,7 @@ const Navbar = () => {
           <a 
             href="#hero" 
             className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-brand-blue' : 'text-brand-blue hover:text-brand-blue-light'
+              isScrolled ? 'text-brand-blue' : 'text-white hover:text-brand-blue'
             }`}
           >
             Auckland Tiling
