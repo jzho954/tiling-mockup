@@ -42,30 +42,32 @@ const Services = () => {
                 const imagePath = serviceImages[service.id as keyof typeof serviceImages] || '/placeholder.svg';
                 
                 return (
-                  <Card key={service.id} className="hover:shadow-lg transition-all overflow-hidden">
-                    <div className="h-48 overflow-hidden">
-                      <img 
-                        src={imagePath} 
-                        alt={service.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <CardHeader>
-                      <div className="flex items-center gap-3">
-                        <div>{service.icon}</div>
-                        <CardTitle className="text-xl font-bold text-brand-blue">{service.title}</CardTitle>
+                  <Link to={`/services/${service.id}`} key={service.id} className="block">
+                    <Card className="hover:shadow-lg transition-all overflow-hidden cursor-pointer h-full">
+                      <div className="h-48 overflow-hidden">
+                        <img 
+                          src={imagePath} 
+                          alt={service.title}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
                       </div>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-gray-700 text-base mb-4">
-                        {service.description}
-                      </CardDescription>
-                      <Link to={`/services/${service.id}`} className="flex items-center text-brand-blue font-medium">
-                        <span>Learn more</span>
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </CardContent>
-                  </Card>
+                      <CardHeader>
+                        <div className="flex items-center gap-3">
+                          <div>{service.icon}</div>
+                          <CardTitle className="text-xl font-bold text-brand-blue">{service.title}</CardTitle>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-gray-700 text-base mb-4">
+                          {service.description}
+                        </CardDescription>
+                        <div className="flex items-center text-brand-blue font-medium">
+                          <span>Learn more</span>
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 );
               })}
             </div>

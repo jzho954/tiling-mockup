@@ -15,7 +15,7 @@ const About = () => {
       <Navbar />
       
       <main className="pt-16 pb-20">
-        <AboutSection />
+        <AboutSection showHero={true} />
         
         <div className="section-container mt-16">
           <motion.div
