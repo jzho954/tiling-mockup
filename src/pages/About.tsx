@@ -11,20 +11,6 @@ const About = () => {
       <Navbar />
       
       <main className="pt-28 pb-20">
-        <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="text-3xl md:text-4xl font-bold text-primary mb-8">About Us</h1>
-            <p className="text-lg text-gray-700 mb-12 max-w-3xl">
-              Welcome to Auckland Tiling, where craftsmanship meets quality. Our team brings over a decade of 
-              experience in transforming homes and businesses throughout Auckland.
-            </p>
-          </motion.div>
-        </div>
-        
         <AboutSection />
         
         <div className="section-container mt-16">
