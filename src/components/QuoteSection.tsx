@@ -51,7 +51,7 @@ const QuoteSection = () => {
           {/* Left side content */}
           <ScrollAnimation animation="fade-in-left">
             <div className="pr-0 lg:pr-12">
-              <p className="uppercase text-blue-500 font-semibold tracking-wider mb-2">GET IN TOUCH</p>
+              <p className="uppercase text-primary font-semibold tracking-wider mb-2">GET IN TOUCH</p>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Let's Start Your Tiling Project</h2>
               <p className="text-gray-600 text-lg mb-10">
                 Ready to transform your space? Fill out the form and our team will 
@@ -60,22 +60,22 @@ const QuoteSection = () => {
               
               <div className="space-y-6">
                 <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <h3 className="text-gray-700 font-semibold">Phone</h3>
-                    <p className="text-blue-500 font-medium">0800 TILING</p>
+                    <p className="text-primary font-medium">0800 TILING</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <h3 className="text-gray-700 font-semibold">Email</h3>
-                    <p className="text-blue-500 font-medium">info@aucklandtilingexperts.co.nz</p>
+                    <p className="text-primary font-medium">info@aucklandtilingexperts.co.nz</p>
                   </div>
                 </div>
               </div>
@@ -164,7 +164,7 @@ const QuoteSection = () => {
                 
                 <button
                   type="submit"
-                  className="w-full py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-300"
+                  className="w-full py-3 px-6 bg-primary hover:bg-primary/90 text-white font-medium rounded-md transition-colors duration-300"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
