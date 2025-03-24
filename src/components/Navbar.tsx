@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -78,12 +79,12 @@ const Navbar = () => {
               })}
             </div>
             
-            <a 
-              href="#quote" 
+            <Link 
+              to="/quote"
               className={`btn-primary text-sm ${isScrolled ? 'py-2 px-4' : 'py-2.5 px-5'} ml-3`}
             >
               Get Quote
-            </a>
+            </Link>
           </div>
         </div>
       </div>
