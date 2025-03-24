@@ -8,9 +8,9 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { title: 'About', href: '/#about' },
+  { title: 'About', href: '/about' },
   { title: 'Services', href: '/services' },
-  { title: 'Reviews', href: '/#reviews' },
+  { title: 'Reviews', href: '/reviews' },
 ];
 
 const Navbar = () => {
@@ -55,7 +55,7 @@ const Navbar = () => {
           <Link
             to="/" 
             className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-brand-blue' : 'text-white hover:text-brand-blue'
+              isScrolled ? 'text-primary' : 'text-white hover:text-primary'
             }`}
           >
             Auckland Tiling
@@ -64,15 +64,9 @@ const Navbar = () => {
           <div className="flex items-center space-x-1 md:space-x-4">
             <div className="hidden md:flex space-x-1 md:space-x-4">
               {navLinks.map((link) => {
-                // Check if this is an internal link (starts with /)
-                const isInternalLink = link.href.startsWith('/');
+                const isActive = location.pathname === link.href;
                 
-                // For homepage anchors, we check activeSection
-                const isActive = isInternalLink 
-                  ? location.pathname === link.href
-                  : activeSection === link.href.substring(1);
-                
-                return isInternalLink ? (
+                return (
                   <Link
                     key={link.title}
                     to={link.href}
@@ -80,14 +74,6 @@ const Navbar = () => {
                   >
                     {link.title}
                   </Link>
-                ) : (
-                  <a
-                    key={link.title}
-                    href={link.href}
-                    className={`nav-link ${isScrolled ? 'text-black' : 'text-white'} ${isActive ? 'active' : ''}`}
-                  >
-                    {link.title}
-                  </a>
                 );
               })}
             </div>
