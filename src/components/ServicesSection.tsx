@@ -9,7 +9,7 @@ export interface Service {
   id: string;
   title: string;
   description: string;
-  icon: React.ReactNode; // Changed from string to ReactNode
+  icon: React.ReactNode;
   detailDescription?: string;
 }
 
@@ -48,7 +48,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, delay }) => {
       <Link to={`/services/${service.id}`} className="block h-full">
         <Card className="glass-card hover-scale h-full transition-all hover:shadow-lg">
           <CardHeader>
-            <div className="mb-4">{service.icon}</div>
+            <div className="flex justify-center items-center h-20 mb-4">
+              {service.icon}
+            </div>
             <CardTitle className="text-xl font-bold text-brand-blue">{service.title}</CardTitle>
           </CardHeader>
           <CardContent>
