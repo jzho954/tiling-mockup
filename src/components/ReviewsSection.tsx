@@ -15,23 +15,23 @@ interface ReviewCardProps {
 
 const reviews = [
   {
-    content: "Andrew was great to deal with, and we were pleased to have him and his team install a hedge and feature tree for us. After initial delays due to stock issues, the team went full steam ahead and completed the job quickly and professionally. We would absolutely recommend them!",
-    author: "Martin",
-    location: "West Auckland",
-    rating: 5,
+    "content": "The team at Auckland Tiling did an amazing job on my bathroom renovation. The tiles look stunning, and the attention to detail was spot on. They finished on time and left the space spotless. Highly recommend!",
+    "author": "Sarah",
+    "location": "West Auckland",
+    "rating": 5
   },
   {
-    content: "Andrew and the Ground Up Team completed a new driveway with some extra earthworks, retaining walls, gardening, hedge planting, ready lawn and new gates as part of a significant renovation at our property. All the work was completed to a very high standard and professionally with no short cuts taken and the results are outstanding. Very happy with the end result and the quality. Highly recommended.",
-    author: "Dhaya",
-    location: "West Auckland",
-    rating: 5,
+    "content": "Auckland Tiling transformed our kitchen with a beautiful backsplash and floor tiles. The work was top-notch, with no corners cut, and the end result is absolutely perfect. They were professional and easy to work with. Couldn’t be happier!",
+    "author": "James",
+    "location": "West Auckland",
+    "rating": 5
   },
   {
-    content: "Andrew and the team did a fantastic job on my garden, especially given the mud as a result of this weather. They did everything from fences, retaining and planting. Getting soil. It wasn't the easiest garden to get into but they got it done. Andrew was easy to deal with and kept me in the loop as timings had to change as a result of the weather.",
-    author: "Fiona",
-    location: "Central Auckland",
-    rating: 5,
-  },
+    "content": "The team did a fantastic job tiling our outdoor patio, even with tricky weather conditions. They handled everything from prep to laying the tiles perfectly. Communication was great, and they adjusted timelines as needed. Really impressed with the quality!",
+    "author": "Emma",
+    "location": "Central Auckland",
+    "rating": 5
+  }
 ];
 
 const ReviewCard: React.FC<ReviewCardProps> = ({ content, author, location, rating, delay }) => {
