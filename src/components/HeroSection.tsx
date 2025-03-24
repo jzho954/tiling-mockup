@@ -1,124 +1,124 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Button } from "@/components/ui/button";
+import { Link } from 'react-router-dom';
 import { TextRotate } from '@/components/ui/text-rotate';
-import { ArrowLeft, ArrowRight } from "lucide-react";
-
-const images = [
-  "/lovable-uploads/3e220ebf-07be-4913-8047-07446025fa55.png", // Bathroom
-  "/lovable-uploads/ec3a22fa-5536-45c1-b37c-2b19541595f3.png", // Hexagonal tiles
-  "/lovable-uploads/43ddcf7c-d006-4a57-ba92-2a089682b03a.png"  // Installation
-];
 
 const HeroSection = () => {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const goToNext = () => {
-    setCurrentImage((prev) => (prev + 1) % images.length);
-  };
-
-  const goToPrev = () => {
-    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
-  };
-
   return (
-    <section 
-      id="hero" 
-      className="relative flex items-center justify-center min-h-[80vh] w-full bg-gray-900 overflow-hidden"
-    >
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0 transition-opacity duration-1000"
+    <section className="relative min-h-screen bg-black">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center z-0"
         style={{
-          backgroundImage: `url('${images[currentImage]}')`,
+          backgroundImage: "url('/lovable-uploads/3e220ebf-07be-4913-8047-07446025fa55.png')",
           backgroundPosition: "center center",
           filter: "brightness(0.4)"
         }}
       />
-      
-      <div className="absolute z-10 bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 flex gap-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              currentImage === index ? "w-8 bg-white" : "w-2 bg-white/50"
-            }`}
-            onClick={() => setCurrentImage(index)}
-          />
-        ))}
-      </div>
-      
-      <div className="absolute z-10 left-4 md:left-8 top-1/2 transform -translate-y-1/2">
-        <Button 
-          variant="outline" 
-          size="icon" 
-          onClick={goToPrev}
-          className="rounded-full bg-white/10 hover:bg-white/20 text-white border-white/20"
-        >
-          <ArrowLeft className="h-5 w-5" />
-        </Button>
-      </div>
-      
-      <div className="absolute z-10 right-4 md:right-8 top-1/2 transform -translate-y-1/2">
-        <Button 
-          variant="outline" 
-          size="icon" 
-          onClick={goToNext}
-          className="rounded-full bg-white/10 hover:bg-white/20 text-white border-white/20"
-        >
-          <ArrowRight className="h-5 w-5" />
-        </Button>
-      </div>
 
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="flex flex-col items-center justify-center"
-        >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2 md:mb-4 tracking-tight leading-tight">
-            Auckland's{" "}
-            <span className="relative inline-block">
+      {/* Main Content Container */}
+      <div className="relative z-10 container mx-auto px-4 pt-40 pb-20">
+        {/* Hero Text */}
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <motion.h1 
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Transform Your{' '}
+            <span className="text-[#a3e635]">
               <TextRotate
                 texts={[
-                  "Premier",
-                  "Finest",
-                  "Leading",
-                  "Expert",
-                  "Professional"
+                  "Bathroom",
+                  "Kitchen",
+                  "Living Space",
+                  "Outdoor Area"
                 ]}
-                mainClassName="text-brand-blue inline-block overflow-hidden"
+                mainClassName="inline-block overflow-hidden"
                 staggerDuration={0.03}
                 staggerFrom="first"
                 rotationInterval={3000}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
               />
             </span>
-            {" "}Tiling Experts
-          </h1>
-          <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-2xl">
-            Quality Craftsmanship for Kiwi Homes & Businesses
-          </p>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", damping: 20, stiffness: 300 }}
+          </motion.h1>
+          
+          <motion.p 
+            className="text-xl text-white/90 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <a 
-              href="#quote" 
-              className="btn-primary text-lg shadow-lg"
-            >
-              Get Quote
-            </a>
-          </motion.div>
+            Tiles Auckland delivers premium tiling solutions across Auckland, 
+            creating beautiful, functional spaces since 2010.
+          </motion.p>
+        </div>
+
+        {/* CTA Buttons */}
+        <motion.div 
+          className="flex flex-wrap justify-center gap-4 mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <a 
+            href="#quote" 
+            className="bg-[#a3e635] hover:bg-[#8bc93a] text-gray-900 font-bold py-3 px-8 rounded-full transition-all duration-300"
+          >
+            Get a Free Quote
+          </a>
+          <Link 
+            to="/services" 
+            className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-full transition-all duration-300"
+          >
+            Our Services
+          </Link>
         </motion.div>
+
+        {/* Stats Section */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center text-white max-w-5xl mx-auto">
+          <motion.div 
+            className="stats-item"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <p className="text-5xl font-bold text-[#a3e635] mb-2">10+</p>
+            <p className="text-lg">Years Experience</p>
+          </motion.div>
+          
+          <motion.div 
+            className="stats-item"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <p className="text-5xl font-bold text-[#a3e635] mb-2">300+</p>
+            <p className="text-lg">Projects Completed</p>
+          </motion.div>
+          
+          <motion.div 
+            className="stats-item"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+          >
+            <p className="text-5xl font-bold text-[#a3e635] mb-2">Auckland</p>
+            <p className="text-lg">Service Area</p>
+          </motion.div>
+          
+          <motion.div 
+            className="stats-item"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            <p className="text-5xl font-bold text-[#a3e635] mb-2">100%</p>
+            <p className="text-lg">Satisfaction</p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
