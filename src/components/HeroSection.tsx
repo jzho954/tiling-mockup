@@ -13,7 +13,7 @@ const HeroSection = () => {
         style={{
           backgroundImage: "url('/lovable-uploads/3e220ebf-07be-4913-8047-07446025fa55.png')",
           backgroundPosition: "center center",
-          filter: "brightness(0.4)"
+          filter: "brightness(0.7)"  // Changed from 0.4 to 0.7 to make the image brighter
         }}
       />
 
