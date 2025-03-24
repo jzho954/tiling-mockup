@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { services } from '@/components/ServicesSection';
@@ -84,9 +85,9 @@ const ServiceDetail = () => {
               </div>
 
               <div className="text-center">
-                <a href="#quote" className="btn-primary">
+                <Link to="/quote" className="btn-primary">
                   Get a Quote for {service.title}
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>
