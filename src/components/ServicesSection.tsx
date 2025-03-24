@@ -10,6 +10,7 @@ export interface Service {
   title: string;
   description: string;
   icon: React.ReactNode;
+  imagePath?: string;
   detailDescription?: string;
 }
 
@@ -19,6 +20,7 @@ export const services: Service[] = [
     title: "Indoor Tiling",
     description: "Transform your kitchens, bathrooms, and living areas with stunning tiles. We specialize in intricate patterns and designs that elevate Auckland homes.",
     icon: <Hammer className="w-10 h-10 text-brand-blue" />,
+    imagePath: "/lovable-uploads/43ddcf7c-d006-4a57-ba92-2a089682b03a.png",
     detailDescription: "Our indoor tiling service covers all aspects of interior tiling, from kitchen backsplashes to bathroom floors and walls. We work with a wide range of materials including ceramic, porcelain, natural stone, and mosaic tiles. Our team specializes in creating custom patterns and designs that complement your home's aesthetic. We handle everything from surface preparation to grouting and sealing, ensuring a flawless finish that will last for years to come."
   },
   {
@@ -26,6 +28,7 @@ export const services: Service[] = [
     title: "Outdoor Tiling",
     description: "Weather-resistant tiling for patios, pool surrounds, and outdoor living spaces. Durable solutions perfect for Auckland's varied climate.",
     icon: <PaintRoller className="w-10 h-10 text-brand-blue" />,
+    imagePath: "/lovable-uploads/ec3a22fa-5536-45c1-b37c-2b19541595f3.png",
     detailDescription: "Our outdoor tiling solutions are designed to withstand Auckland's weather conditions while enhancing your exterior spaces. We install slip-resistant tiles for pool areas, frost-resistant options for patios, and decorative tiles for garden paths. Our team selects materials that can endure UV exposure, temperature fluctuations, and moisture without compromising on style. We ensure proper drainage installation and use specialized outdoor grouts and sealants to protect your investment for years to come."
   },
   {
@@ -33,6 +36,7 @@ export const services: Service[] = [
     title: "Waterproofing",
     description: "Expert waterproofing services for bathrooms, showers, and wet areas. Essential protection for Auckland properties to prevent moisture damage.",
     icon: <Droplets className="w-10 h-10 text-brand-blue" />,
+    imagePath: "/lovable-uploads/3e220ebf-07be-4913-8047-07446025fa55.png",
     detailDescription: "Our waterproofing services provide crucial protection for wet areas in your home or commercial property. We apply industry-leading membrane systems that create a watertight barrier before tiling. Our team follows New Zealand building code requirements and uses certified waterproofing products that come with manufacturer guarantees. We specialize in shower recesses, bathrooms, laundries, balconies, and other areas prone to water exposure. Our thorough approach includes proper preparation, membrane application, and quality testing to ensure complete water resistance."
   }
 ];
@@ -47,6 +51,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, delay }) => {
     <ScrollAnimation animation="slide-up" delay={delay}>
       <Link to={`/services/${service.id}`} className="block h-full">
         <Card className="glass-card hover-scale h-full transition-all hover:shadow-lg">
+          {service.imagePath && (
+            <div className="h-48 overflow-hidden">
+              <img 
+                src={service.imagePath} 
+                alt={service.title}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          )}
           <CardHeader>
             <div className="flex justify-center items-center h-20 mb-4">
               {service.icon}
