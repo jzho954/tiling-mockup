@@ -2,7 +2,6 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ReviewsSection from '@/components/ReviewsSection';
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Star } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -113,8 +112,6 @@ const Reviews = () => {
             ))}
           </div>
         </div>
-        
-        <ReviewsSection />
       </main>
       
       <Footer />
