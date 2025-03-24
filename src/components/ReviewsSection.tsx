@@ -4,6 +4,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import ScrollAnimation from './ScrollAnimation';
 import { Star, ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface ReviewCardProps {
   content: string;
@@ -81,9 +82,11 @@ const ReviewsSection = () => {
         </div>
 
         <div className="flex justify-center mt-12">
-          <Button variant="outline" className="flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white hover:bg-brand-blue-light border-none">
-            View All Reviews
-            <ArrowRight className="w-4 h-4" />
+          <Button asChild variant="outline" className="flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white hover:bg-brand-blue-light border-none">
+            <Link to="/reviews">
+              View All Reviews
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </Button>
         </div>
       </div>
