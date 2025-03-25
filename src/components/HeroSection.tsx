@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -13,7 +12,7 @@ const HeroSection = () => {
         style={{
           backgroundImage: "url('/lovable-uploads/tiling.jpg')",
           backgroundPosition: "center center",
-          filter: "brightness(0.7)"
+          filter: "brightness(1)"
         }}
       />
 
